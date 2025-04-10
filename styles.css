@@ -109,21 +109,39 @@ body {
 }
 
 /* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%); /* Oculta por defecto en pantallas pequeñas */
     }
-
+    
     .sidebar.show {
         transform: translateX(0); /* Muestra la barra cuando la clase show está activa */
     }
-
+    
     .main-content, .main-content-portfolio, .main-content-bio {
         margin-left: 0;
     }
-}
 
-
+    .content1 {
+      flex-direction: column; /* Acomoda uno debajo del otro */
+      align-items: center; /* Centra el contenido */
+      text-align: center; 
+    }
+  
+    .logos img, #logofi {
+      max-width: 150px; /* Tamaño máximo controlado */
+      width: 80%; /* Escala bien con la pantalla */
+      margin-bottom: 15px; /* Espacio entre imagen y texto */
+    }
+  
+    .parrafos {
+      max-width: 90%;
+    }
+  
+    .parrafos p {
+      margin: 5px 0; /* Espaciado vertical suave */
+    }
+  }
 
 .sidebar h2, main h1 {
     font-size: 56px;
