@@ -1,0 +1,417 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #363636;
+    color: #fff;
+    display: flex; /* Hace que los hijos del body se distribuyan horizontalmente */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex; /* Hace que los elementos hijos se distribuyan horizontalmente */
+    width: 100%;
+    min-height: 100vh; /* Se asegura de que el contenido cubra toda la altura */
+}
+
+.main-content {
+    flex: 1; /* Ocupa todo el espacio restante a la derecha de la barra lateral */
+    padding: 20px;
+    transition: padding-left 0.3s ease-in-out;
+    margin-left: 80px; /* Margen suficiente para la sidebar abierta */
+}
+
+.main-content-portfolio {
+    flex: 1;
+    padding: 20px;
+    transition: padding-left 0.3s ease-in-out;
+    margin-left: 250px;
+}
+
+.main-content-bio {
+    flex: 1;
+    padding: 20px;
+    transition: padding-left 0.3s ease-in-out;
+    margin-left: 525px;
+}
+
+/* Estilos generales */
+.sidebar {
+    background-color: #1c1c1c;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 100; /* Se asegura de que esté sobre el contenido */
+}
+
+/* Ocultar barra lateral por defecto en pantallas pequeñas */
+.sidebar.closed {
+    transform: translateX(-100%); /* Mueve la barra fuera de la pantalla */
+}
+
+.main-content.sidebar-closed {
+    padding-left: 0; /* Elimina el margen cuando la barra lateral está cerrada */
+}
+
+.main-content-portfolio.sidebar.closed {
+    padding-left: 0;
+}
+
+.main-content-bio.sidebar-closed {
+    padding-left: 0;
+}
+
+/* Estilos del botón */
+.open-btn {
+    font-size: 30px;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.changecolortheme {
+    font-size: 30px;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Estilos para pantallas grandes (sin cerrar barra) */
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0); /* Siempre visible */
+    }
+    .main-content {
+        padding-left: 250px; /* Espacio para la barra lateral en pantallas grandes */
+    }
+
+    .main-content-portfolio {
+        padding-left: 250px;
+    }
+
+    .main-content-bio {
+        padding-left: 250px;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Oculta por defecto en pantallas pequeñas */
+    }
+
+    .sidebar.show {
+        transform: translateX(0); /* Muestra la barra cuando la clase show está activa */
+    }
+
+    .main-content, .main-content-portfolio, .main-content-bio {
+        margin-left: 0;
+    }
+}
+
+
+
+.sidebar h2, main h1 {
+    font-size: 56px;
+    color: rgb(178, 178, 178); /* Cambia a rojo */
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sidebar h2 a {
+    text-decoration: none;
+    color: rgb(178, 178, 178); /* Cambia a rojo */
+}
+
+/*#home {
+    margin-left: 240px;
+}
+
+#bio, #portfolio, #contact {
+    margin-left: 200px;
+}
+
+#bio {
+    height: 100vh;
+}*/
+
+#bio h1, #portfolio h1, #contact h1 {
+    font-size: 48px;
+    color: rgb(178, 178, 178);
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* Estilo para el enlace seleccionado */
+.sidebar ul li a.active {
+    color: red; /* Cambia el color del enlace seleccionado */
+    font-weight: bold; /* Opcional: hacer el texto más grueso */
+}
+
+
+.sidebar ul li a:hover {
+    color: red;
+}
+
+/* Alineación de la bio */
+.bio-content {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bio-content p {
+    font-size: 22px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección portfolio */
+.game-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.game {
+    text-align: center;
+}
+
+.game img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.game a {
+    display: inline-block;
+    color: #fff;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.game a:hover {
+    background-color: darkred;
+}
+
+
+.content1 {
+    margin-right: 140px;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente los elementos dentro del contenedor */
+}
+
+.logos img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
+
+
+.content1 p {
+    font-size: 20px;
+    max-width: 500px; /* Controla el ancho del párrafo para que se divida en varias líneas */
+    text-align: left;
+    line-height: 1.5; /* Para mejorar la legibilidad del texto */
+}
+
+#text {
+    text-align: center;
+    margin-top: 125px;
+    font-size: 24px;
+    color: rgb(178, 178, 178);
+}
+
+/*.gamesContainer {
+    justify-content: space-between;
+    display: flex;
+}*/
+
+.gamesContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los juegos se ajusten en varias filas si es necesario */
+    justify-content: space-around;
+    gap: 75px; /* Añade espacio entre los juegos */
+}
+
+.gamesContainer img {
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 50px;
+}
+
+.juego {
+    text-align: center; /* Centra el texto debajo de la imagen */
+}
+
+.logosredes {
+    justify-content: left;
+    display: flex; /* Hace que el enlace esté en una nueva línea, debajo de la imagen */
+    margin-top: 10px;
+    gap: 30px;
+    max-width: 60%;
+    max-height: 60%;
+    margin-left: 100px;
+}
+.logosredes img {
+    display: block;
+    margin-right: 0;
+    max-width: 75px;
+    max-height: 50px;
+}
+
+.juego img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+    height: auto;
+}
+
+.juego a {
+    font-size: 20px;
+    display: block; /* Hace que el enlace esté en una nueva línea, debajo de la imagen */
+    margin-top: 10px;
+    color: #db0e0e; /* Opcional: color del enlace */
+}
+
+.juego a:hover {
+    color: #c20000;
+}
+
+.scroll-link {
+    display: block;
+    color: rgb(209, 0, 0);
+    margin-top: 10px;
+}
+
+.section-portfolio {
+    padding: 50px;
+    margin: 20px 0;
+}
+
+/* Estilos generales */
+#contact_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #363636;
+}
+
+/* Sección de contacto */
+#contact {
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgb(0, 0, 0);
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Título */
+#contact h1 {
+    font-size: 24px;
+    color: #ff0000;
+    margin-bottom: 15px;
+}
+
+/* Etiquetas */
+#contact label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ff0000;
+}
+
+/* Campos de entrada */
+#contact input,
+#contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: #d7d7d7;
+}
+
+/* Efecto al enfocar inputs */
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+/* Botón de enviar */
+#contact button {
+    margin-top: 30px;
+    background: #ff0000;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    width: 80%;
+}
+
+/* Efecto hover del botón */
+#contact button:hover {
+    background: #b30303;
+}
+
+#logofi {
+    max-width: 50%;
+    max-height: 50%;
+    margin-left: 100px;
+}
+
+.parrafos {
+    margin-right: 100px;
+}
